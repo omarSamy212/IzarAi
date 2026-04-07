@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -55,18 +56,18 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="numbered-heading overline">Let&apos;s Work Together</h2>
 
-      <h2 className="title">Get In Touch</h2>
+      <h2 className="title">Get in touch</h2>
 
       <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+        Tell us about your idea and business goals. We will get back to you with the right plan
+        and team for your project.
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
-      </a>
+      <Link className="email-link" to="/contact">
+        Open contact form
+      </Link>
     </StyledContactSection>
   );
 };

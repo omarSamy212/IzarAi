@@ -266,9 +266,9 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
-              Resume
-            </a>
+            <Link to="/contact" className="resume-link" onClick={() => setMenuOpen(false)}>
+              Get in touch
+            </Link>
           </nav>
         </StyledSidebar>
       </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -165,29 +164,43 @@ const StyledTabPanel = styled.div`
 `;
 
 const Jobs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const jobsData = data.jobs.edges;
+  const jobsData = [
+    {
+      title: 'Marketing',
+      company: 'IzarAi',
+      range: 'Growth & Brand',
+      url: '/contact',
+      html: '<ul><li>Digital strategy and brand positioning</li><li>Performance campaigns and lead generation</li><li>Content and funnel optimization</li></ul>',
+    },
+    {
+      title: 'UI/UX',
+      company: 'IzarAi',
+      range: 'Product Design',
+      url: '/contact',
+      html: '<ul><li>User research and journey mapping</li><li>Wireframes, prototypes, and design systems</li><li>Conversion-focused interface design</li></ul>',
+    },
+    {
+      title: 'Web & Mobile Apps',
+      company: 'IzarAi',
+      range: 'Engineering',
+      url: '/contact',
+      html: '<ul><li>Custom web platforms and mobile apps</li><li>Scalable APIs and backend services</li><li>Testing, deployment, and maintenance</li></ul>',
+    },
+    {
+      title: 'Embedded Systems',
+      company: 'IzarAi',
+      range: 'Hardware + Software',
+      url: '/contact',
+      html: '<ul><li>Firmware and IoT solution development</li><li>Sensor and device integration</li><li>Real-time data communication</li></ul>',
+    },
+    {
+      title: 'ERP',
+      company: 'IzarAi',
+      range: 'Business Operations',
+      url: '/contact',
+      html: '<ul><li>ERP implementation and customization</li><li>Workflow automation and reporting</li><li>Integration with existing systems</li></ul>',
+    },
+  ];
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -244,13 +257,13 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Our Services</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
+            jobsData.map((service, i) => {
+              const { company } = service;
               return (
                 <StyledTabButton
                   key={i}
@@ -271,9 +284,8 @@ const Jobs = () => {
 
         <StyledTabPanels>
           {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+            jobsData.map((service, i) => {
+              const { title, url, company, range, html } = service;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
