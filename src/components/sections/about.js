@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -75,14 +76,12 @@ const StyledPic = styled.div`
       }
     }
 
-    .logo-text {
+    .img {
       position: relative;
       z-index: 2;
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: clamp(24px, 5vw, 38px);
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      max-width: 85%;
+      max-height: 150px;
+      object-fit: contain;
     }
 
     &:before,
@@ -164,7 +163,14 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <div className="logo-text">IzarAi</div>
+            <StaticImage
+              className="img"
+              src="../../images/companyLogoTransperent.png"
+              quality={100}
+              placeholder="none"
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="IzarAi logo"
+            />
           </div>
         </StyledPic>
       </div>

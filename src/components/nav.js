@@ -67,8 +67,8 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--green);
-      width: 42px;
-      height: 42px;
+      width: auto;
+      height: auto;
       position: relative;
       z-index: 1;
 
@@ -85,6 +85,11 @@ const StyledNav = styled.nav`
       .logo-container {
         position: relative;
         z-index: 1;
+        img {
+          display: block;
+          height: 30px;
+          width: auto;
+        }
         svg {
           fill: none;
           user-select: none;

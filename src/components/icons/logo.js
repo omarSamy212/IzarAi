@@ -1,15 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
-const StyledWordmark = styled.span`
-  display: inline-block;
-  color: var(--green);
-  font-family: var(--font-mono);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1;
-`;
-
-const IconLogo = () => <StyledWordmark>IzarAi</StyledWordmark>;
+const IconLogo = () => (
+  <StaticImage
+    src="../../images/companyLogoTransperent.png"
+    alt="IzarAi"
+    placeholder="none"
+    height={30}
+    quality={100}
+  />
+);
 
 export default IconLogo;
