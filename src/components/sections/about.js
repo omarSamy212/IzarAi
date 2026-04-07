@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -163,14 +162,7 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <StaticImage
-              className="img"
-              src="../../images/companyLogoTransperent.png"
-              quality={100}
-              placeholder="none"
-              formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="IzarAi logo"
-            />
+            <img className="img" src="/companyLogo.svg" alt="IzarAi logo" />
           </div>
         </StyledPic>
       </div>
