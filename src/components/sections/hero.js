@@ -65,15 +65,13 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        Full solution software house for intelligent solutions. We help companies build scalable
-        products through strategy, design, and engineering.
+        Full solution software house for intelligent solutions. We help individuals and companies
+        build scalable products through strategy, design, and engineering.
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="/contact">
+    <a className="email-link" href="/contact">
       Get in touch
     </a>
   );

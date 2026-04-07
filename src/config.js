@@ -1,12 +1,7 @@
 module.exports = {
   email: 'hello@izarai.com',
 
-  socialMedia: [
-    {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com',
-    },
-  ],
+  socialMedia: [],
 
   navLinks: [
     {
@@ -16,10 +11,6 @@ module.exports = {
     {
       name: 'Services',
       url: '/#jobs',
-    },
-    {
-      name: 'Work',
-      url: '/#projects',
     },
     {
       name: 'Contact',

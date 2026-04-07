@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -57,11 +56,14 @@ const StyledPic = styled.div`
 
   .wrapper {
     ${({ theme }) => theme.mixins.boxShadow};
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
+    min-height: 220px;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    background-color: var(--light-navy);
 
     &:hover,
     &:focus {
@@ -71,19 +73,16 @@ const StyledPic = styled.div`
       &:after {
         transform: translate(8px, 8px);
       }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
     }
 
-    .img {
+    .logo-text {
       position: relative;
-      border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
+      z-index: 2;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: clamp(24px, 5vw, 38px);
+      font-weight: 700;
+      letter-spacing: 0.06em;
     }
 
     &:before,
@@ -100,8 +99,7 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
+      background-color: rgba(100, 255, 218, 0.08);
     }
 
     &:after {
@@ -143,7 +141,7 @@ const About = () => {
           <div>
             <p>
               IzarAi is a full solution software house focused on delivering intelligent digital
-              solutions for startups, enterprises, and growing businesses.
+              solutions for individuals, startups, enterprises, and growing businesses.
             </p>
 
             <p>
@@ -166,14 +164,7 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <StaticImage
-              className="img"
-              src="../../images/companyLogoTransperent.png"
-              width={500}
-              quality={95}
-              formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="IzarAi logo"
-            />
+            <div className="logo-text">IzarAi</div>
           </div>
         </StyledPic>
       </div>
