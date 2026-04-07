@@ -85,10 +85,9 @@ const StyledNav = styled.nav`
       .logo-container {
         position: relative;
         z-index: 1;
-        img {
+        .wordmark {
           display: block;
-          height: 42px;
-          width: auto;
+          font-size: clamp(24px, 3.4vw, 32px);
         }
         svg {
           fill: none;
