@@ -10,7 +10,10 @@ const StyledWordmark = styled.span`
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: none;
+  text-shadow: 0 0 14px rgba(100, 255, 218, 0.25);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.35);
+  padding-bottom: 2px;
 `;
 
 const IconLogo = () => <StyledWordmark className="wordmark">IzarAi</StyledWordmark>;

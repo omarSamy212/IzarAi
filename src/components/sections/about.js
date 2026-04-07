@@ -75,12 +75,20 @@ const StyledPic = styled.div`
       }
     }
 
-    .img {
+    .brand-mark {
       position: relative;
       z-index: 2;
-      max-width: 85%;
-      max-height: 150px;
-      object-fit: contain;
+      color: var(--green);
+      font-family: 'BankGothic Md BT', 'Microgramma D Extended', 'Eurostile', 'Square721 BT',
+        'Arial Narrow', sans-serif;
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: none;
+      text-shadow: 0 0 18px rgba(100, 255, 218, 0.2);
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.35);
     }
 
     &:before,
@@ -162,7 +170,7 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <img className="img" src="/companyLogo.svg" alt="IzarAi logo" />
+            <span className="brand-mark">IzarAi</span>
           </div>
         </StyledPic>
       </div>
