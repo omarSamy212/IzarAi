@@ -87,7 +87,7 @@ const StyledNav = styled.nav`
         z-index: 1;
         img {
           display: block;
-          height: 30px;
+          height: 42px;
           width: auto;
         }
         svg {
